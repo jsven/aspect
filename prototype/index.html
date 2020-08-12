@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="module">
+  import {aspectInit} from './index.js';
+  aspectInit();
+  let doSomeThing = () => {
+    console.log('doSomeThing');
+  }
+  doSomeThing = doSomeThing.before(function (){ console.log('before') });
+  doSomeThing = doSomeThing.before(function (){ console.log('before') });
+  doSomeThing = doSomeThing.after(function (){ console.log('after') });
+  doSomeThing();
+</script>
+</html>
